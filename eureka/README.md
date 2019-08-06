@@ -2,7 +2,7 @@
 
 Eureka作为Spring Cloud 微服务体系中重要的一部分，主要负责服务治理功能。
 
-##服务治理
+## 服务治理
 服务治理是微服务体系中最核心和最基础的模块，主要实现各个微服务实例的自动化注册和发现。
 
 
@@ -13,18 +13,18 @@ Eureka作为Spring Cloud 微服务体系中重要的一部分，主要负责服�
 
 
 ## 运行说明
-- 首先，启动Eureka服务器注册中心，访问 http://localhost:1111
+首先，启动Eureka服务器注册中心，访问 http://localhost:1111
    
     
         
         java -jar eureka-server-0.0.1-SNAPSHOT.jar
 
-- 然后，启动两个注册服务提供者，此时查看Eureka注册中心，可以看到新增的两个服务
+然后，启动两个注册服务提供者，此时查看Eureka注册中心，可以看到新增的两个服务
 
         java -jar eureka-client-0.0.1-SNAPSHOT.jar --server.port=8081
         java -jar eureka-client-0.0.1-SNAPSHOT.jar --server.port=8082
 
-- 最后，启动一个服务消费者程序，通过浏览器访问 http://localhost:9000/ribbon-consumer 进行调用
+最后，启动一个服务消费者程序，通过浏览器访问 http://localhost:9000/ribbon-consumer 进行调用
         
         java -jar ribbon-consumer-0.0.1-SNAPSHOT.jar --server.port=9000       
    
