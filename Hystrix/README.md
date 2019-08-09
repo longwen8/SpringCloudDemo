@@ -69,7 +69,10 @@ Spring Cloud 完美地整合了它的仪表盘组件 Hystrix Dashboard,它主要
 
        java -jar hystrix-dashboard-0.0.1-SNAPSHOT.jar --server.port=2001
 
-访问页面 http://localhost:2001/hystrix 如下图所示：
+访问页面 http://localhost:2001/hystrix 
+
+如下图所示：
+
 ![image](https://github.com/longwen8/SpringCloudDemo/blob/master/Hystrix/images/hystrix.stream_data.png)
 
 
@@ -106,29 +109,34 @@ Hystrix Dashboard 支持三种监控方式，如下所示
 
     }
 
-然后可以通过访问 http://localhost:9000/actuator/hystrix.stream 会有数据产生。如下图所示：
+然后可以通过访问 http://localhost:9000/actuator/hystrix.stream 会有数据产生。
 
-*注意，如果只有ping 没有数据，需要访问一下接口服务。*
+如下图所示：
 
 ![image](https://github.com/longwen8/SpringCloudDemo/blob/master/Hystrix/images/hystrix_stream_dashboard.png)
 
+**注意，如果只有ping 没有数据，需要访问一下接口服务。**
 ### 默认集群监控
 
 集群监控需要使用Turbine 来汇集监控信息，在maven库中增加 turbine，参考例子 turbine.
 
-    	<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-turbine</artifactId>
-		</dependency>
+    <dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-starter-netflix-turbine</artifactId>
+	</dependency>
 
-启动turbine命令：
+启动 turbine 命令：
    
-      java jar turbine-0.0.1-SNAPSHOT.jar --server.port=8989
+    java jar turbine-0.0.1-SNAPSHOT.jar --server.port=8989
 
-访问数据页面 http://localhost:8989/turbine.stream 如下图所示：
+访问数据页面 http://localhost:8989/turbine.stream 
+
+如下图所示：
 
 ![image](https://github.com/longwen8/SpringCloudDemo/blob/master/Hystrix/images/turbine_stream_data.png)
 
-访问监控页面 http://localhost:2001/hystrix/monitor?stream=http%3A%2F%2Flocalhost%3A8989%2Fturbine.stream 如下图所示：
+访问监控页面 http://localhost:2001/hystrix/monitor?stream=http%3A%2F%2Flocalhost%3A8989%2Fturbine.stream 
+
+如下图所示：
 
 ![image](https://github.com/longwen8/SpringCloudDemo/blob/master/Hystrix/images/turbine_stream_dashboard.png)
