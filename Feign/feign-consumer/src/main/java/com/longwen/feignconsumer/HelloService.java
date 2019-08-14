@@ -12,7 +12,7 @@ public interface HelloService {
     String hello(@RequestParam("name") String name);
 
     @RequestMapping(value = "/hello2",method = RequestMethod.GET)
-    public User hello(@RequestHeader String name, @RequestHeader Integer age);
+    public User hello(@RequestHeader("name") String name, @RequestHeader("age") Integer age);
 
     @RequestMapping(value = "/hello3",method = RequestMethod.POST)
     public String hello(@RequestBody User user);
