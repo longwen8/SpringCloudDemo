@@ -1,8 +1,8 @@
-##声明式服务调用： Spring Cloud Feign
+## 声明式服务调用： Spring Cloud Feign
 
 微服务之间实质通过http协议进行相互之间的通信。Spring Cloud Ribbon 利用了RestTemplate对Http请求进行了封装。而Spring Cloud Feign则是在此基础上的更进一步封装。只需要我们使用接口定义并通过注释的方式，即可完成对服务提供方接口的绑定。简化了开发过程。
 
-##运行说明
+## 运行说明
 
 首先，启动Eureka服务注册中，访问http://localhost:1111,参考 Eureka目录中
 
@@ -24,7 +24,7 @@
 
 
 
-##调用方式说明
+## 调用方式说明
 ### 1 接口定义和SpringMVC的注释来绑定
    参考 feign-consumer项目中的com.longwen.feignconsumer.HelloService实现类，近似复制。
 ### 2.通过继承特性来绑定。
@@ -39,7 +39,7 @@
 
 
 
-##Ribbon配置
+## Ribbon配置
 在配置文件中配置全局的ribbon属性，例如 ribbon.ConnectTimeout=500等
 
 在配置文件中配置某一个服务的ribbon属性，例如 HELLO-SERVICE.ribbon.ReadTimeout=2000
@@ -53,7 +53,7 @@
 通过在服务类中增加随机时间休眠的方式，可以验证重试策略。
 
 
-##Hystrix配置
+## Hystrix配置
 
 Feign中设置可以使用hystrix
 
@@ -68,7 +68,7 @@ Feign中设置可以使用hystrix
 
 
 
-##日志输出配置 
+## 日志输出配置 
 
 配置文件中可以根据不同的服务定义不同的日志级别,例如：
   
