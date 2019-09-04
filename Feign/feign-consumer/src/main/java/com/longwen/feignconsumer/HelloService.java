@@ -3,7 +3,7 @@ package com.longwen.feignconsumer;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient("hello-service")
+@FeignClient(value = "hello-service",fallback = HelloServiceFallback.class)
 public interface HelloService {
     @RequestMapping("/hello")
     String hello();

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Random;
 
 @RestController
 public class ConsumerController {
@@ -17,7 +18,8 @@ public class ConsumerController {
     RefactorHelloService refactorHelloService;
 
     @RequestMapping(value = "/feign-consumer",method = RequestMethod.GET)
-    public String helloConsumer(){
+    public String helloConsumer() throws InterruptedException {
+
         return helloService.hello();
     }
 
